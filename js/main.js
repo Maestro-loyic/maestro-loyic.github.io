@@ -364,6 +364,68 @@ function applyLanguage(lang) {
   targets.forEach(function(el) { io.observe(el); });
 })();
 
+// ==========================================
+// MOMENTS CAROUSEL (auto-scrolling)
+// ==========================================
+(function initMomentsCarousel() {
+  var strip = document.getElementById('momentsStrip');
+  if (!strip) return;
+  var cards = strip.querySelectorAll('.moment-card');
+  var dotsWrap = document.getElementById('momentsDots');
+  var prevBtn = document.getElementById('momentsPrev');
+  var nextBtn = document.getElementById('momentsNext');
+  var current = 0;
+  var timer;
+
+  cards.forEach(function(_, i) {
+    var dot = document.createElement('button');
+    dot.className = 'm-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    dot.addEventListener('click', function() { goTo(i); startAuto(); });
+    dotsWrap.appendChild(dot);
+  });
+  var dots = dotsWrap.querySelectorAll('.m-dot');
+
+  function updateDots() {
+    dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+  }
+
+  function goTo(index) {
+    current = (index + cards.length) % cards.length;
+    strip.scrollTo({ left: cards[current].offsetLeft, behavior: 'smooth' });
+    updateDots();
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  function startAuto() {
+    clearInterval(timer);
+    timer = setInterval(next, 4000);
+  }
+
+  if (nextBtn) nextBtn.addEventListener('click', function() { next(); startAuto(); });
+  if (prevBtn) prevBtn.addEventListener('click', function() { prev(); startAuto(); });
+
+  // keep dots in sync if the user scrolls/swipes manually
+  var scrollTimeout;
+  strip.addEventListener('scroll', function() {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(function() {
+      var closest = 0;
+      var closestDist = Infinity;
+      cards.forEach(function(card, i) {
+        var dist = Math.abs(card.offsetLeft - strip.scrollLeft);
+        if (dist < closestDist) { closestDist = dist; closest = i; }
+      });
+      current = closest;
+      updateDots();
+    }, 120);
+  });
+
+  startAuto();
+})();
+
 // nav toggle
 var toggle = document.getElementById('navToggle');
 var navList = document.getElementById('navList');

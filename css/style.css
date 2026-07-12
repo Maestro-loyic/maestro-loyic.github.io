@@ -1792,6 +1792,7 @@ nav ul li a.active::after {
 }
 
 @media (max-width: 980px) {
+  .section { padding-top: 52px; padding-bottom: 52px; }
   .topbar, .navbar-inner, .section, .impact-band,
   .stat-strip, .mission-bar, .cta-band, .footer-grid,
   .footer-bottom, .page-hero { padding-left: 28px; padding-right: 28px; }
@@ -1848,7 +1849,9 @@ nav ul li a.active::after {
 @media (max-width: 560px) {
   .topbar-left { flex-direction: column; gap: 8px; }
   .hero h1 { font-size: 30px; }
-  .section-title { font-size: 26px; }
+  .section { padding-top: 40px; padding-bottom: 40px; }
+  .section-title { font-size: 23px; line-height: 1.25; }
+  .section-lead { font-size: 14px; margin-bottom: 4px; }
   .big-nums { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .contact-form { padding: 22px; }
@@ -2350,6 +2353,10 @@ nav ul li a.active::after {
 .footer { position: relative; overflow: hidden; }
 .footer-map-strip { position: absolute; right: -40px; top: -20px; opacity: 0.5; pointer-events: none; }
 .footer-africa-mini { width: 260px; height: 260px; }
+
+@media (max-width: 980px) {
+  .footer-map-strip { display: none; }
+}
 .footer-grid { position: relative; z-index: 2; }
 .footer-bottom { position: relative; z-index: 2; }
 
@@ -2571,18 +2578,31 @@ nav ul li a.active::after {
    MOMENTS FROM THE FIELD (photo story strip)
    ========================================== */
 
-.moments-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+.moments-carousel {
+  position: relative;
   margin-top: 44px;
 }
+
+.moments-strip {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+
+.moments-strip::-webkit-scrollbar { display: none; }
 
 .moment-card {
   position: relative;
   border-radius: 10px;
   overflow: hidden;
   aspect-ratio: 3 / 4;
+  flex: 0 0 calc(25% - 14px);
+  scroll-snap-align: start;
 }
 
 .moment-card img {
@@ -2629,8 +2649,60 @@ nav ul li a.active::after {
   font-weight: 500;
 }
 
+.moments-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #e8ceb0;
+  color: #E8720E;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(20,20,10,0.14);
+  transition: background 0.2s, color 0.2s;
+  z-index: 5;
+}
+
+.moments-arrow:hover { background: #E8720E; color: #fff; }
+.moments-arrow.prev { left: -18px; }
+.moments-arrow.next { right: -18px; }
+
+.moments-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.moments-dots .m-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e8ceb0;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.moments-dots .m-dot.active { background: #E8720E; transform: scale(1.25); }
+
 @media (max-width: 860px) {
-  .moments-strip { grid-template-columns: repeat(2, 1fr); }
+  .moment-card { flex: 0 0 calc(50% - 9px); }
+  .moments-carousel { margin-top: 28px; }
+}
+
+@media (max-width: 560px) {
+  .moment-card { flex: 0 0 100%; }
+  .moments-arrow { display: none; }
+  .moments-strip { gap: 12px; }
 }
 
 /* ==========================================
