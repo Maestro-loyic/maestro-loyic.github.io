@@ -2365,10 +2365,22 @@ nav ul li a.active::after {
    ========================================== */
 
 @media (max-width: 980px) {
-  .hero-full { padding: 90px 28px 60px; }
+  .hero-full { padding: 80px 24px 40px; }
   .hero-full h1 { font-size: 38px; }
-  .hero-full-stats { flex-direction: column; gap: 18px; }
+  .hero-full-desc { margin-bottom: 24px; }
+  .hero-full-buttons { margin-bottom: 32px; gap: 10px; }
+  .scroll-indicator { margin-top: 28px; }
+  .hero-full-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 10px;
+    max-width: 320px;
+    padding-top: 22px;
+  }
+  .hero-full-stats .hfs-item { min-width: 0; padding: 0; }
   .hero-full-stats .hfs-item + .hfs-item::before { display: none; }
+  .hero-full-stats .hfs-num { font-size: 24px; margin-bottom: 2px; }
+  .hero-full-stats .hfs-lbl { font-size: 10px; }
   .africa-map-grid { grid-template-columns: 1fr; }
   .ways-grid, .ways-grid-4 { grid-template-columns: 1fr; }
   .lang-menu { right: auto; left: 0; }
