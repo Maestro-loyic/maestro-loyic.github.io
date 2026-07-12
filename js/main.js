@@ -75,7 +75,8 @@ var i18n = {
     cta_btn1: "Get Involved", cta_btn2: "Explore Programs",
     footer_tagline: "\"We Initiate and Sustain\"",
     footer_desc: "A Ugandan non-profit headquartered in Kawempe, Kampala, transforming communities through education, skills, and faith since 2013.",
-    footer_quicklinks: "Quick Links", footer_contact: "Contact", footer_rights: "All rights reserved."
+    footer_quicklinks: "Quick Links", footer_contact: "Contact", footer_rights: "All rights reserved.",
+    footer_privacy: "Privacy Policy", footer_terms: "Terms of Use"
   },
   sw: {
     nav_home: "Nyumbani", nav_about: "Kuhusu Sisi", nav_programs: "Programu", nav_impact: "Matokeo",
@@ -150,7 +151,8 @@ var i18n = {
     cta_btn1: "Shiriki Nasi", cta_btn2: "Angalia Programu",
     footer_tagline: "\"Tunaanzisha na Kudumisha\"",
     footer_desc: "Shirika lisilo la kiserikali la Uganda lenye makao Kawempe, Kampala, likibadilisha jamii kupitia elimu, ujuzi, na imani tangu 2013.",
-    footer_quicklinks: "Viungo vya Haraka", footer_contact: "Wasiliana", footer_rights: "Haki zote zimehifadhiwa."
+    footer_quicklinks: "Viungo vya Haraka", footer_contact: "Wasiliana", footer_rights: "Haki zote zimehifadhiwa.",
+    footer_privacy: "Sera ya Faragha", footer_terms: "Masharti ya Matumizi"
   },
   lg: {
     nav_home: "Awaka", nav_about: "Ku Ffe", nav_programs: "Enteekateeka", nav_impact: "Ebiva Mu Kazi",
@@ -225,7 +227,8 @@ var i18n = {
     cta_btn1: "Yingira Mu Kazi", cta_btn2: "Laba Enteekateeka",
     footer_tagline: "\"Tutandikawo era Tusigaza\"",
     footer_desc: "Ekitongole kya Uganda ekitali kya gavumenti ekiri e Kawempe, Kampala, nga kikyusa ebitundu okuyita mu by'okusoma, obumanyirivu, n'okukkiriza okuva mu 2013.",
-    footer_quicklinks: "Emikutu Egyanguyirwa", footer_contact: "Tukwatagane", footer_rights: "Eddembe lyonna likuumiddwa."
+    footer_quicklinks: "Emikutu Egyanguyirwa", footer_contact: "Tukwatagane", footer_rights: "Eddembe lyonna likuumiddwa.",
+    footer_privacy: "Enkola y'Ebyama", footer_terms: "Ebiragiro by'Okukozesa"
   }
 };
 
